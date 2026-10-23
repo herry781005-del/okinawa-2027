@@ -29,7 +29,45 @@ ul{padding-left:20px}li{margin:5px 0}
 .srcs{columns:2;column-gap:18px;font-size:.86rem}.srcs li{break-inside:avoid}
 footer{color:#6b7b82;font-size:.82rem;margin-top:30px}
 @media(max-width:600px){.pc{grid-template-columns:1fr}dl div{grid-template-columns:78px 1fr}.srcs{columns:1}header h1{font-size:1.25rem}}
-</style></head><body>
+</style><style id="sitemobile">
+nav.sitenav{display:flex;gap:2px;align-items:center;justify-content:center;flex-wrap:nowrap;overflow-x:auto;white-space:nowrap;background:#06344a;padding:3px 6px;margin:0;position:static;border:0;scrollbar-width:none;z-index:6}
+nav.sitenav::-webkit-scrollbar{display:none}
+nav.sitenav a{display:inline-flex;align-items:center;justify-content:center;gap:4px;min-height:44px;min-width:44px;padding:0 12px;margin:0;border-radius:10px;background:transparent;color:#e6f4fa;text-decoration:none;font-size:15px;font-weight:600;line-height:1}
+nav.sitenav a:hover{background:rgba(255,255,255,.12)}
+nav.sitenav a[aria-current=page]{background:#fff;color:#06344a}
+img,video{max-width:100%;height:auto}
+@media (max-width:640px){
+ html{-webkit-text-size-adjust:100%}
+ body{font-size:16px}
+ nav.sitenav{justify-content:space-between;padding:3px 4px}
+ nav.sitenav a{padding:0 8px;font-size:15px;flex:1 1 auto}
+ nav.sitenav a .ic{display:none}
+ .wrap{padding-left:12px;padding-right:12px}
+ section{padding:16px 12px}
+ .small,.src,.legend,.area,.dlegend,footer,.foot,ol.srcs li,.srcs,.rate,.note,.mealbox,.why,.base,.rainbox,.trans,.avail,dl div,.pc div{font-size:14px}
+ table.data,.tw table,table.data td,table.data th,table.meal td,table.meal th{font-size:14px}
+ table.data thead th{font-size:13.5px}
+ .lb,.pill,.badge,.tag,.drv,.sum .k,.price .l,.baxis,.tday span{font-size:13px}
+ .scrollhint{font-size:13.5px}
+ a.tref{display:inline-block;font-size:13.5px;padding:3px 6px;margin:1px 0}
+ a{overflow-wrap:anywhere}
+ nav.toc a,nav:not(.sitenav)>a{display:inline-flex;align-items:center;min-height:44px;font-size:15px}
+ summary{min-height:44px;padding:10px 0;cursor:pointer}
+ button,select,input[type=number],input[type=text]{min-height:44px;font-size:16px}
+ input[type=radio],input[type=checkbox]{width:20px;height:20px}
+ /* lodging comparison tables: sticky first column inside the horizontal scroller */
+ div.tw>table tr>*:first-child{position:sticky;left:0;z-index:2;box-shadow:1px 0 0 #dde6e8}
+ div.tw>table tbody tr>td:first-child{background:#fff}
+ div.tw>table tbody tr:nth-child(even)>td:first-child{background:#fafcfc}
+ div.tw>table thead tr>th:first-child{z-index:3}
+ div.tw,.tw-wrap{max-width:100%}
+ div.tw::before{content:"← 表格可左右滑動，第一欄固定 →";display:block;font-size:13.5px;color:#5b6b72;padding:6px 10px;background:#fff}
+ div.tw>table tr>*:first-child{min-width:7.5em}
+ div.tw>table td{min-width:5em}
+ .srcs{columns:1}
+}
+@media print{nav.sitenav,.noprint{display:none!important}}
+</style></head><body><nav class="sitenav" aria-label="網站頁面"><a href="index.html"><span class="ic">🏠</span>首頁</a><a href="itinerary.html"><span class="ic">🗓️</span>行程</a><a href="transport.html"><span class="ic">🚗</span>交通</a><a href="lodging.html" aria-current=page><span class="ic">🏨</span>住宿</a><a href="budget.html"><span class="ic">💰</span>預算</a></nav>
 <header><div class="wrap" style="padding-bottom:0"><h1>沖繩家族旅行住宿比較<br>2027/2/24–2/28（4 晚）</h1><p>9 人：7 位大人（含 2 位 65 歲）＋1.5 歲、2.5 歲幼兒・3 房・2012 年後新建・不選頂級奢華・CP 值優先・親子設施加分・不限地區（行程以恩納為中心，每家附 5 天車程與過路費，推估）</p><p>飯店價格：楽天 2026/10/22 4 晚含稅總價，另附 Agoda 比價（BEB5／TWIN-LINE／AlaCOOJU 2026/10/23 查）；民宿：Airbnb 稅前總價。未訂任何房間。</p></div></header>
 <nav><a href="#top">結論</a><a href="#short">飯店排名</a><a href="#cmp">總覽表</a><a href="#ota">比價</a><a href="#near">其他飯店</a><a href="#house">整棟民宿</a><a href="#vs">飯店vs民宿</a><a href="#browser">待確認</a><a href="#narrow">縮小條件</a><a href="#calc">算法</a><a href="#src">來源</a></nav><div class="wrap">
 <div class="note" style="margin-top:14px"><b>匯率：</b>本頁所有價格都以 1 日圓 = 0.21 新台幣換算，四捨五入到 NT$100（估）。參考：台灣銀行 2026/10/22 現金賣出 0.2106。原始日圓報價見附註與來源連結。</div>
