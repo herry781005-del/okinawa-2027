@@ -325,12 +325,6 @@ img,video{max-width:100%;height:auto}
 <div class="var full"><div class="step"><i>2</i>選方案</div><div class="combo">目前是 <b id="cno">組合 1</b> <span id="cdesc"></span></div></div>
 <div class="var"><h4>🏨 住宿預算</h4><p class="small" style="margin:0 0 6px">現在先投住宿預算範圍，飯店只是舉例，實際住哪間之後再決定。</p><div class="seg"><label><input type="radio" name="lod" value="0" checked><span><b>經濟｜約 NT$4.3 萬</b><small class="ex">例如：㉕ 石川民宿</small><em>NT$42,700</em></span></label><label><input type="radio" name="lod" value="1"><span><b>中等｜約 NT$7.3 萬</b><small class="ex">例如：恩納電梯整棟／MIHANA／TWIN-LINE／AlaCOOJU</small><em>NT$72,700</em></span></label><label><input type="radio" name="lod" value="2"><span><b>舒適｜約 NT$7.8 萬</b><small class="ex">例如：BEB5 3 間</small><em>NT$78,000</em></span></label><label><input type="radio" name="lod" value="3"><span><b>高級｜約 NT$9.7 萬</b><small class="ex">例如：Monterey／AQUASENSE</small><em>NT$97,400</em></span></label></div></div>
 <div class="var"><h4>🚗 交通</h4><div class="seg"><label><input type="radio" name="tra" value="0" checked><span><b>A｜全租車</b><em>NT$16,460</em></span></label><label><input type="radio" name="tra" value="1"><span><b>G｜D1 包車＋恩納取車</b><em>NT$26,600</em></span></label><label><input type="radio" name="tra" value="2"><span><b>C｜全包車</b><em>NT$46,460</em></span></label></div></div>
-<div class="var full"><h4>✈️ 機票單價（每張，台幣）</h4><div class="tix">
-<label>大人票 × 7<input id="ad" type="number" inputmode="numeric" min="0" step="1" value="10610"></label>
-<label>小孩票 × 1<input id="ch" type="number" inputmode="numeric" min="0" step="1" value="7950"></label>
-<label>嬰兒票 × 1<input id="inf" type="number" inputmode="numeric" min="0" step="1" value="0"></label></div>
-<div id="fwarn" class="warnbox" hidden></div></div>
-<div class="var full"><h4>🍜 小孩餐費</h4><label class="sw"><input type="checkbox" id="kid"><span>2 位小孩也算餐費（+NT$7,200）</span></label></div>
 <div class="var full"><button type="button" class="reset" id="reset">恢復預設值</button></div>
 </div></div>
 <a class="mini" id="mini" href="#result" hidden><span id="mini1"></span><b id="mini2"></b></a>
@@ -378,7 +372,8 @@ img,video{max-width:100%;height:auto}
 <tr><th>小孩（2 歲半）</th><td class="num">1</td><td class="num">7,950 <span class="lb e">估</span></td><td class="num">7,950</td><td>Herry、Lulu 平分，每人 3,975</td></tr>
 <tr><th>嬰兒（1 歲半）</th><td class="num">1</td><td class="num">0</td><td class="num">0</td><td>—</td></tr>
 </tbody><tfoot><tr><th>合計</th><td></td><td></td><td class="num">82,220</td><td><span class="lb q">查</span> 總額已知</td></tr></tfoot></table></div>
-<p class="small">只知道總額 NT$82,220（7 大人＋1 小孩＋1 嬰兒）。預設值假設小孩票約大人票的 75%：7 × 10,610 ＋ 7,950 ＝ 82,220（取到十位數，分攤剛好整數）。拿到訂位明細後，把實際單價填進上面就會重算。</p></div></details>
+<p class="small">只知道總額 NT$82,220（7 大人＋1 小孩＋1 嬰兒）。預設值假設小孩票約大人票的 75%：7 × 10,610 ＋ 7,950 ＝ 82,220（取到十位數，分攤剛好整數）。</p>
+<div class="note small"><b>注意：</b>機票單價是推估（大人 NT$10,610、小孩 NT$7,950、嬰兒免費，合計 NT$82,220），上面的計算直接用這個價格；小孩餐費不算。拿到訂位明細後再更新。</div></div></details>
 <details class="dd" id="lodging"><summary><span>🏨 住宿（4 種價位）<small>價位、住宿稅、早餐、停車</small></span></summary><div class="in"><p><b>現在先投住宿預算範圍，飯店只是舉例，實際住哪間之後再決定。</b>下面每個價位都附一個舉例的住宿，價格以它為準。</p><div class="tiers"><div class="tier" style="--c:#0b7a3e"><h4>經濟｜約 NT$4.3 萬</h4><div class="small">例如：石川 ㉕ 2025 新建 3LDK 整棟（Airbnb）</div><div class="price">NT$42,700</div>
 <div class="small">房價 NT$41,900 <span class="lb q">查</span> ＋ 住宿稅約 NT$800 <span class="lb e">估</span>，4 晚合計</div>
 <ul class="small"><li>早餐：不含（自理，屋內有廚房）</li><li>飯店停車：2 台免費</li><li>5 天開車時間：約 9 小時 15 分（每台過路費約 NT$514）</li><li>Airbnb 顯示的 4 晚稅前總價。三組家庭各一房，最便宜。</li><li>同價位其他例子：㉔ 隔壁同型 NT$41,900；金武 ㉗ 整棟 NT$39,400（車程約 9 小時 25 分）；石川 2019 5 房 NT$37,200；4LDK NT$43,200</li></ul></div><div class="tier" style="--c:#0b6e99"><h4>中等｜約 NT$7.3 萬</h4><div class="small">例如：恩納冨着 2025 開幕 3 層樓整棟（有電梯，Airbnb）</div><div class="price">NT$72,700</div>
@@ -416,19 +411,18 @@ img,video{max-width:100%;height:auto}
 <tr><th>D5 2/28</th><td>SEE THE SEA</td><td>—（傍晚搭機）</td></tr>
 </tbody></table></div>
 <div class="tw-wrap"><table class="data cost"><thead><tr><th>計算</th><th class="num">金額</th></tr></thead><tbody>
-<tr><th>9 餐 × NT$400 × 7 大人（預設）</th><td class="num">25,200</td></tr>
-<tr><th>小孩也算：9 餐 × NT$400 × 2（開關）</th><td class="num">+7,200</td></tr>
+<tr><th>9 餐 × NT$400 × 7 大人</th><td class="num">25,200</td></tr>
 </tbody></table></div>
-<p class="small">活動＋美食合計：預設 NT$39,900（Herry、Lulu、Allen、Charlene 每人 NT$9,975）；小孩也算時 NT$47,100（每人 NT$11,775）。餐廳見 <a href="itinerary.html">行程與餐廳頁</a>。</p></div></details>
+<p class="small">活動＋美食合計 NT$39,900（Herry、Lulu、Allen、Charlene 每人 NT$9,975）；2 位小孩不算餐費。餐廳見 <a href="itinerary.html">行程與餐廳頁</a>。</p></div></details>
 <details class="dd" id="notes"><summary><span>📝 假設、不含的項目、還要確認的事<small>早餐、零食、伴手禮、保險都不在預算裡</small></span></summary><div class="in"><h4>不含在預算裡</h4><ul>
 <li>早餐（自理）、零食飲料、伴手禮</li><li>自選體驗（水牛車、餵食等）</li><li>旅遊保險</li><li>台灣端往返機場交通</li></ul>
 <h4>主要假設</h4><ul>
 <li>匯率 1 日圓 = 0.21 台幣。標 <span class="lb e">估</span> 是推估，<span class="lb q">查</span> 是查得到的報價或官方價格。</li>
 <li>機票只知道總額，單張價格是推估。</li>
 <li>住宿稅是推估；方案 G 的恩納店租金是用機場店價推估。</li>
-<li>小孩預設不算餐費（通常跟大人分食）。</li></ul>
+<li>小孩不算餐費（通常跟大人分食）。</li></ul>
 <h4>還需要確認</h4><ul>
-<li>機票單張價格：拿到明細後填進上面。</li>
+<li>機票單張價格：拿到明細後再更新（目前用推估價計算）。</li>
 <li>嬰兒票真的是 0 元嗎？部分航空會收大人票約 10% 的嬰兒費。</li>
 <li>活動與美食的分法：目前是 Herry＋Lulu、Allen＋Charlene 各 50%，Sofia 0。</li>
 <li>住宿都還沒訂，房價會變；㉕ 是 Airbnb 稅前價，結帳頁可能再加費用。</li></ul></div></details>
@@ -452,14 +446,14 @@ var me=qme||findName(st.me);
 function setRadio(name,val){var e=document.querySelector('input[name='+name+'][value="'+val+'"]');if(e)e.checked=true}
 if(me)setRadio('me',me);
 if(st.l!=null)setRadio('lod',st.l);if(st.t!=null)setRadio('tra',st.t);
-if(st.a!=null)$('ad').value=st.a;if(st.c!=null)$('ch').value=st.c;if(st.i!=null)$('inf').value=st.i;if(st.k!=null)$('kid').checked=!!st.k;
-function save(){try{localStorage.setItem(KEY,JSON.stringify({me:me,l:li,t:ti,a:num('ad'),c:num('ch'),i:num('inf'),k:$('kid').checked}))}catch(e){}}
+['a','c','i','k'].forEach(function(x){delete st[x]});try{localStorage.removeItem('okinawa2027-budget');localStorage.removeItem('okinawa2027-budget-v1')}catch(e){}
+function save(){try{localStorage.setItem(KEY,JSON.stringify({me:me,l:li,t:ti}))}catch(e){}}
 var li=0,ti=0;
 function link(p){return location.origin+location.pathname+'?me='+encodeURIComponent(p)}
 function calc(){
  var m=document.querySelector('input[name=me]:checked');me=m?m.value:null;
  li=+document.querySelector('input[name=lod]:checked').value;ti=+document.querySelector('input[name=tra]:checked').value;
- var lt=G.L[li].v,tt=G.T[ti].v,a=num('ad'),c=num('ch'),inf=num('inf'),k=$('kid').checked;
+ var lt=G.L[li].v,tt=G.T[ti].v,a=G.A,c=G.C,inf=0,k=false;
  var food=G.FOOD+(k?G.FOODK:0),af=G.ACT+food;
  var fa=alloc(7*a,[1,1,1,1,1]),fc=alloc(c,[1,1,0,0,0]),fi=alloc(inf,[1,1,0,0,0]);
  var afs=alloc(af,[1,1,0,1,1]),acs=alloc(G.ACT,[1,1,0,1,1]),fds=afs.map(function(x,i){return x-acs[i]});
@@ -487,8 +481,6 @@ function calc(){
  }
  $('ppl').innerHTML=P.map(function(p,i){return i===mi?'':'<button type="button" data-p="'+p+'"><span>'+p+'</span><b>'+fm(per[i])+'</b></button>'}).join('')+'<div class="old"><span>2 位長輩</span><b>NT$0</b></div>';
  $('tline').textContent='這個組合總共 '+fm(tot)+'（5 個人加起來）。';
- var fw=$('fwarn'),ft=7*a+c+inf;
- if(ft!==G.FLIGHT){fw.hidden=false;fw.textContent='注意：7 × 大人票 ＋ 小孩票 ＋ 嬰兒票 ＝ '+fm(ft)+'，和已知機票總額 '+fm(G.FLIGHT)+' 差 NT$'+n0(ft-G.FLIGHT)+'。'}else fw.hidden=true;
  save();if(window._mini)window._mini();
 }
 document.querySelectorAll('#calc input').forEach(function(e){e.addEventListener('input',calc);e.addEventListener('change',calc)});
@@ -496,7 +488,7 @@ document.querySelectorAll('input[name=me]').forEach(function(e){e.addEventListen
 $('ppl').addEventListener('click',function(ev){var b=ev.target.closest('button[data-p]');if(!b)return;setRadio('me',b.getAttribute('data-p'));try{history.replaceState(null,'','?me='+encodeURIComponent(b.getAttribute('data-p')))}catch(x){};calc();$('calc').scrollIntoView({behavior:'smooth'})});
 $('copy').addEventListener('click',function(){var u=link(me),b=this;function ok(){b.textContent='✅ 已複製，貼到 LINE 給 '+me}
  if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(u).then(ok,function(){prompt('複製這個連結',u)});else prompt('複製這個連結',u)});
-$('reset').addEventListener('click',function(){setRadio('lod',0);setRadio('tra',0);$('ad').value=G.A;$('ch').value=G.C;$('inf').value=0;$('kid').checked=false;calc()});
+$('reset').addEventListener('click',function(){setRadio('lod',0);setRadio('tra',0);calc()});
 calc();
 var vis=true;if('IntersectionObserver' in window){new IntersectionObserver(function(es){vis=es[0].isIntersecting;mini()}).observe($('result'))}
 function mini(){$('mini').hidden=vis||!me}
