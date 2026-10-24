@@ -182,6 +182,39 @@ svg.rmap{width:100%;max-width:420px;height:auto;display:block;margin:0 auto}
 @media (min-width:720px){.bases{grid-template-columns:1fr 1fr}.budget{grid-template-columns:1fr 1fr}.drive{margin-left:72px}}
 @media (min-width:1000px){.mapgrid2{display:grid;grid-template-columns:420px 1fr;gap:18px;align-items:start}}
 
+.ov{max-width:1120px;margin:0 auto;padding:14px 14px 6px}
+.ovhero{position:relative;border-radius:22px;overflow:hidden;min-height:440px;display:flex;align-items:flex-end;color:#fff;box-shadow:0 6px 24px rgba(6,52,74,.18)}
+.ovhero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:28% 50%}
+.ovhero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,52,74,0) 25%,rgba(6,52,74,.55) 60%,rgba(6,52,74,.88) 100%)}
+.ovhero .tx{position:relative;z-index:1;padding:22px 20px 22px}
+.ovhero .kick{display:inline-block;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.5);border-radius:999px;padding:2px 12px;font-size:13.5px;font-weight:700;letter-spacing:.04em;backdrop-filter:blur(4px)}
+.ovhero h1{margin:10px 0 6px;font-size:clamp(28px,7.6vw,48px);line-height:1.2;letter-spacing:.03em;text-shadow:0 2px 10px rgba(0,0,0,.25)}
+.ovhero .when{font-weight:800;font-size:clamp(15px,4vw,19px);margin:0 0 8px}
+.ovhero .hook{margin:0;font-size:16px;line-height:1.75;max-width:640px;opacity:.97}
+.ovchips{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:14px 0 4px}
+.ovchip{display:flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:9px 11px;font-size:14.5px;font-weight:700;line-height:1.35}
+.ovchip .e{font-size:22px;line-height:1;flex:none}
+.ovchip small{display:block;font-weight:400;color:var(--muted);font-size:12.5px}
+.ovlead{margin:18px 4px 10px;font-size:20px;font-weight:800;display:flex;align-items:center;gap:8px}
+.ovdays{display:grid;gap:16px}
+.ovday{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.07);display:grid;border-top:5px solid var(--c)}
+.ovday figure{margin:0;position:relative;aspect-ratio:16/10;overflow:hidden;background:#dfe9ef}
+.ovday figure img{width:100%;height:100%;object-fit:cover;display:block}
+.ovday .badge{position:absolute;left:12px;top:12px;background:var(--c);color:#fff;font-weight:800;border-radius:12px;padding:4px 11px;font-size:15px;box-shadow:0 2px 8px rgba(0,0,0,.2)}
+.ovday .badge span{font-weight:600;font-size:12.5px;margin-left:6px;opacity:.95}
+.ovday .bd{padding:14px 16px 16px}
+.ovday h3{margin:0 0 6px;font-size:21px;line-height:1.35;color:var(--c);display:block}
+.ovday p{margin:0 0 10px;font-size:15.5px;line-height:1.8;color:#2b3640}
+.ovtags{display:flex;flex-wrap:wrap;gap:6px}
+.ovtags span{font-size:13px;font-weight:700;border-radius:999px;padding:3px 10px;background:color-mix(in srgb,var(--c) 12%,#fff);color:color-mix(in srgb,var(--c) 80%,#000)}
+.ovmore{text-align:center;margin:18px 0 6px}
+.ovmore a{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:800;border-radius:999px;padding:10px 22px;font-size:15.5px;box-shadow:0 3px 10px rgba(11,110,153,.25)}
+.credits{font-size:12px;color:var(--muted);line-height:1.7}
+.credits a{color:var(--muted)}
+@media (min-width:720px){.ovchips{grid-template-columns:repeat(4,1fr)}.ovhero{min-height:520px}.ovhero img{object-position:50% 50%}.ovhero .tx{padding:34px 36px}}
+@media (min-width:900px){.ovday{grid-template-columns:1.1fr 1fr;align-items:stretch}.ovday figure{aspect-ratio:auto;min-height:300px}.ovday:nth-child(even) figure{order:2}.ovday .bd{padding:24px 26px;align-self:center}.ovday h3{font-size:24px}}
+@media print{.ov{padding:0}.ovhero{min-height:95mm;box-shadow:none}.ovhero img{object-position:50% 50%}.ovchips{grid-template-columns:repeat(4,1fr)}.ovdays{gap:8px}.ovday{grid-template-columns:42% 1fr;box-shadow:none;border:1px solid var(--line);break-inside:avoid}.ovday figure{aspect-ratio:auto;height:52mm;min-height:0}.ovday:nth-child(even) figure{order:0}.ovday .bd{padding:10px 14px;align-self:center}.ovday h3{font-size:18px}.ovday p{font-size:13.5px;line-height:1.6;margin-bottom:6px}.ovmore{display:none}}
+
 [hidden]{display:none!important}
 .hero{padding:22px 16px 26px}
 .hero h1{margin-bottom:4px}
@@ -376,7 +409,7 @@ img,video{max-width:100%;height:auto}
 <div class="note small"><b>注意：</b>機票單價是推估（大人 NT$10,610、小孩 NT$7,950、嬰兒免費，合計 NT$82,220），上面的計算直接用這個價格；小孩餐費不算。拿到訂位明細後再更新。</div></div></details>
 <details class="dd" id="lodging"><summary><span>🏨 住宿（4 種價位）<small>價位、住宿稅、早餐、停車</small></span></summary><div class="in"><p><b>現在先投住宿預算範圍，飯店只是舉例，實際住哪間之後再決定。</b>下面每個價位都附一個舉例的住宿，價格以它為準。</p><div class="tiers"><div class="tier" style="--c:#0b7a3e"><h4>經濟｜約 NT$4.3 萬</h4><div class="small">例如：石川 ㉕ 2025 新建 3LDK 整棟（Airbnb）</div><div class="price">NT$42,700</div>
 <div class="small">房價 NT$41,900 <span class="lb q">查</span> ＋ 住宿稅約 NT$800 <span class="lb e">估</span>，4 晚合計</div>
-<ul class="small"><li>早餐：不含（自理，屋內有廚房）</li><li>飯店停車：2 台免費</li><li>5 天開車時間：約 9 小時 15 分（每台過路費約 NT$514）</li><li>Airbnb 顯示的 4 晚稅前總價。三組家庭各一房，最便宜。</li><li>同價位其他例子：㉔ 隔壁同型 NT$41,900；金武 ㉗ 整棟 NT$39,400（車程約 9 小時 25 分）；石川 2019 5 房 NT$37,200；4LDK NT$43,200</li></ul></div><div class="tier" style="--c:#0b6e99"><h4>中等｜約 NT$7.3 萬</h4><div class="small">例如：恩納冨着 2025 開幕 3 層樓整棟（有電梯，Airbnb）</div><div class="price">NT$72,700</div>
+<ul class="small"><li>早餐：不含（自理，屋內有廚房）</li><li>飯店停車：2 台免費</li><li>5 天開車時間：約 9 小時 15 分（每台過路費約 NT$514）</li><li>Airbnb 顯示的 4 晚稅前總價。三組家庭各一房，最便宜。</li><li>同價位其他例子：㉔ 隔壁同型 NT$41,900；金武 ㉗ 整棟 NT$39,400（車程約 9 小時 25 分）；石川 2019 5 房 NT$37,200；4LDK NT$43,200；恩納北部 OTA 整棟：Grandioso 恩納7 3LDK NT$26,900、HOPE VILLA 約 NT$21,000（含稅，車程約 10–11 小時，2026/10/24 新增，見住宿頁）</li></ul></div><div class="tier" style="--c:#0b6e99"><h4>中等｜約 NT$7.3 萬</h4><div class="small">例如：恩納冨着 2025 開幕 3 層樓整棟（有電梯，Airbnb）</div><div class="price">NT$72,700</div>
 <div class="small">房價 NT$71,300 <span class="lb q">查</span> ＋ 住宿稅約 NT$1,400 <span class="lb e">估</span>，4 晚合計</div>
 <ul class="small"><li>早餐：不含（自理，屋內有廚房）</li><li>飯店停車：3–4 台免費</li><li>5 天開車時間：約 9 小時 30 分（每台過路費約 NT$208）</li><li>Airbnb 顯示的 4 晚稅前總價。3 間臥室（臥 1 兩張雙人床、臥 2 一張雙人床、臥 3 兩張雙人床），三組家庭各一房；有電梯，長輩不用爬樓梯；在恩納，3 種交通方案都照原本走。</li><li>同價位其他例子：MIHANA 恩納真栄田 2022 新建整棟 4 臥室 NT$70,300（Jalan；車程約 9 小時 30 分，推估）；TWIN-LINE 名護 Annex 3 房 NT$71,300（＋稅約 1,200；在名護，車程約 12 小時）；AlaCOOJU 浦添 3 房含早 NT$67,400（＋稅約 1,200＋停車約 2,500；車程約 15 小時 20 分）</li></ul></div><div class="tier" style="--c:#6c2d91"><h4>舒適｜約 NT$7.8 萬</h4><div class="small">例如：BEB5 沖繩瀨良垣（星野）Yuntaku Suite × 3 間</div><div class="price">NT$78,000</div>
 <div class="small">房價 NT$76,700 <span class="lb q">查</span> ＋ 住宿稅約 NT$1,300 <span class="lb e">估</span>，4 晚合計</div>
