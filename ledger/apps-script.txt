@@ -1,0 +1,114 @@
+/**
+ * 沖繩 2027 旅途記帳 — Google Apps Script 後端
+ * 只做三件事：讀出全部支出、新增一筆、把一筆標成「已刪除」（不會真的刪資料）。
+ * 只會動到這份試算表的「支出」分頁。
+ */
+var SHEET = '支出';
+var P = ['Herry', 'Lulu', 'Sofia', 'Allen', 'Charlene'];
+var CATS = ['美食', '活動', '交通雜支', '購物', '其他'];
+var MODES = ['規則', '全員', '指定'];
+var MAX_ROWS = 3000;
+
+function doGet(e) {
+  return out_(list_());
+}
+
+function doPost(e) {
+  var lock = LockService.getScriptLock();
+  lock.waitLock(20000);
+  try {
+    var req = JSON.parse((e && e.postData && e.postData.contents) || '{}');
+    var res;
+    if (req.action === 'add') res = add_(req.entry || {});
+    else if (req.action === 'del') res = del_(String(req.id || ''));
+    else res = { ok: false, error: 'unknown action' };
+    if (res.ok) res.rows = list_().rows;
+    return out_(res);
+  } catch (err) {
+    return out_({ ok: false, error: String(err) });
+  } finally {
+    lock.releaseLock();
+  }
+}
+
+function sheet_() { return SpreadsheetApp.getActiveSpreadsheet().getSheetByName(SHEET); }
+
+function lastRow_(sh) {
+  var n = sh.getLastRow();
+  if (n < 2) return 1;
+  var ids = sh.getRange(1, 1, n, 1).getValues();
+  for (var i = ids.length - 1; i >= 0; i--) if (ids[i][0] !== '') return i + 1;
+  return 1;
+}
+
+function list_() {
+  var sh = sheet_(), last = lastRow_(sh);
+  if (last < 2) return { ok: true, rows: [] };
+  var v = sh.getRange(2, 1, last - 1, 13).getValues();
+  var rows = [];
+  for (var i = 0; i < v.length; i++) {
+    var r = v[i];
+    if (r[0] === '') continue;
+    rows.push({
+      id: String(r[0]), ts: fmt_(r[1], 'yyyy-MM-dd HH:mm'), date: fmt_(r[2], 'yyyy-MM-dd'),
+      cat: String(r[3]), item: String(r[4]), amt: Number(r[5]) || 0, cur: String(r[6]) || 'JPY',
+      rate: Number(r[7]) || 0.21, payer: String(r[8]), mode: String(r[9]) || '規則',
+      who: String(r[10]), note: String(r[11]), del: String(r[12]) !== ''
+    });
+  }
+  return { ok: true, rows: rows };
+}
+
+function fmt_(x, f) {
+  if (x instanceof Date) return Utilities.formatDate(x, 'Asia/Tokyo', f);
+  return String(x);
+}
+
+function txt_(s, n) {
+  s = String(s == null ? '' : s).replace(/[\r\n\t]+/g, ' ').trim().slice(0, n);
+  if (/^[=+\-@]/.test(s)) s = "'" + s;  // 防止被當成公式
+  return s;
+}
+
+function add_(x) {
+  var id = String(x.id || '');
+  if (!/^[A-Za-z0-9_-]{6,40}$/.test(id)) return { ok: false, error: 'bad id' };
+  var amt = Number(x.amt), rate = Number(x.rate);
+  if (!(amt > 0 && amt <= 10000000)) return { ok: false, error: 'bad amount' };
+  if (!(rate >= 0.05 && rate <= 1)) return { ok: false, error: 'bad rate' };
+  var cur = x.cur === 'TWD' ? 'TWD' : 'JPY';
+  if (P.indexOf(x.payer) < 0) return { ok: false, error: 'bad payer' };
+  if (CATS.indexOf(x.cat) < 0) return { ok: false, error: 'bad category' };
+  if (MODES.indexOf(x.mode) < 0) return { ok: false, error: 'bad mode' };
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(String(x.date))) return { ok: false, error: 'bad date' };
+  var who = '';
+  if (x.mode === '指定') {
+    var w = String(x.who || '').split(',').filter(function (p) { return P.indexOf(p) >= 0; });
+    if (!w.length) return { ok: false, error: 'no people' };
+    who = w.join(',');
+  }
+  var sh = sheet_(), last = lastRow_(sh);
+  if (last > MAX_ROWS) return { ok: false, error: 'sheet full' };
+  if (last >= 2) {
+    var ids = sh.getRange(2, 1, last - 1, 1).getValues();
+    for (var i = 0; i < ids.length; i++) if (String(ids[i][0]) === id) return { ok: true, dup: true };
+  }
+  var now = Utilities.formatDate(new Date(), 'Asia/Tokyo', 'yyyy-MM-dd HH:mm');
+  var row = [id, "'" + now, "'" + x.date, x.cat, txt_(x.item, 60), amt, cur, rate, x.payer, x.mode, who, txt_(x.note, 200), ''];
+  sh.getRange(last + 1, 1, 1, 13).setValues([row]);
+  return { ok: true };
+}
+
+function del_(id) {
+  var sh = sheet_(), last = lastRow_(sh);
+  if (last < 2) return { ok: false, error: 'not found' };
+  var ids = sh.getRange(2, 1, last - 1, 1).getValues();
+  for (var i = 0; i < ids.length; i++) {
+    if (String(ids[i][0]) === id) { sh.getRange(i + 2, 13).setValue('是'); return { ok: true }; }
+  }
+  return { ok: false, error: 'not found' };
+}
+
+function out_(o) {
+  return ContentService.createTextOutput(JSON.stringify(o)).setMimeType(ContentService.MimeType.JSON);
+}
