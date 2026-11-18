@@ -1,5 +1,5 @@
 <!DOCTYPE html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>沖繩家族旅行 記帳 2027/2/24–2/28</title>
-<meta property="og:title" content="沖繩家族旅行 旅途記帳"><meta property="og:description" content="花了錢就記一筆，最後自動算誰該給誰">
+<meta property="og:title" content="沖繩家族旅行 旅途記帳"><meta property="og:description" content="花了錢就記一筆">
 <meta name="theme-color" content="#0b6e99">
 <style>
 :root{--ink:#1f2933;--muted:#5f6b7a;--line:#e3e6ea;--bg:#f6f7f9;--card:#fff;--accent:#0b6e99}
@@ -247,32 +247,10 @@ details.more>summary{cursor:pointer;color:var(--accent);font-weight:700;font-siz
 .mgrid{display:grid;gap:8px;grid-template-columns:1fr 1fr}
 .mgrid label{font-size:13.5px;color:var(--muted);display:block}
 .mgrid input{width:100%;font:inherit;font-size:16px;padding:8px 10px;border:1.5px solid #c9d6df;border-radius:10px;min-height:44px}
-.modes{grid-template-columns:repeat(3,1fr)}
-.modes button{font-size:14.5px;min-height:46px}
-.whos{grid-template-columns:repeat(5,1fr);margin-top:6px}
-.whos button{min-height:44px;font-size:14px}
-.splitnote{font-size:14px;color:#0b4a6e;background:#e8f0fe;border-radius:10px;padding:6px 10px;margin-top:8px}
 .go{width:100%;margin-top:12px;min-height:58px;border:0;border-radius:14px;background:#0b7a3e;color:#fff;font-size:20px;font-weight:900;cursor:pointer;box-shadow:0 4px 12px rgba(11,122,62,.3)}
 .go:disabled{background:#9aa5b1;box-shadow:none}
 .msg{margin-top:8px;font-size:15px;font-weight:700;min-height:1.4em}
 .msg.ok{color:#0b7a3e}.msg.err{color:#b3261e}
-.settle{background:linear-gradient(135deg,#06344a,#0b6e99);color:#fff}
-.settle h2{color:#fff}
-.tot{display:flex;flex-wrap:wrap;gap:4px 16px;align-items:baseline;margin-bottom:8px}
-.tot b{font-size:clamp(30px,9vw,42px);font-weight:900;font-variant-numeric:tabular-nums}
-.tot span{opacity:.9;font-size:15px}
-.tr{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.14);border-radius:12px;padding:10px 12px;margin:6px 0;font-size:17px;font-weight:700;flex-wrap:wrap}
-.tr .amt{margin-left:auto;font-size:22px;font-weight:900;font-variant-numeric:tabular-nums}
-.tr .ar{opacity:.8}
-.none{background:rgba(255,255,255,.14);border-radius:12px;padding:10px 12px;font-size:16px}
-.tog{display:inline-flex;background:rgba(255,255,255,.15);border-radius:999px;padding:3px;margin:4px 0 6px}
-.tog button{border:0;background:transparent;color:#fff;font-weight:800;font-size:14px;border-radius:999px;padding:4px 12px;min-height:34px;cursor:pointer}
-.tog button.on{background:#fff;color:#06344a}
-table.bal{width:100%;border-collapse:collapse;margin-top:10px;font-variant-numeric:tabular-nums;font-size:15px}
-table.bal th,table.bal td{padding:6px 6px;border-bottom:1px solid rgba(255,255,255,.18);text-align:right}
-table.bal th:first-child,table.bal td:first-child{text-align:left}
-table.bal thead th{font-size:13px;opacity:.85;font-weight:600}
-.pos{color:#9ff0c0}.neg{color:#ffd0c8}
 .list .day{font-weight:800;color:#3c4652;margin:14px 0 4px;font-size:15px;display:flex;justify-content:space-between}
 .ent{display:flex;gap:10px;align-items:center;border-bottom:1px solid var(--line);padding:8px 0}
 .ent .ic{font-size:22px;flex:none;width:30px;text-align:center}
@@ -287,10 +265,8 @@ table.bal thead th{font-size:13px;opacity:.85;font-weight:600}
 .empty{color:var(--muted);text-align:center;padding:18px 0}
 .fine{font-size:13px;color:var(--muted);line-height:1.6}
 .fine li{margin:3px 0}
-@media(min-width:960px){.cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px;align-items:start}.cols>section{margin-top:12px}}
 @media(max-width:640px){
  .chips button{font-size:13.5px;min-height:56px}
- .whos button{font-size:13px;padding:0}
  .mgrid{grid-template-columns:1fr 1fr}
 }
 </style><style id="sitemobile">
@@ -332,20 +308,16 @@ img,video{max-width:100%;height:auto}
 }
 @media print{nav.sitenav,.noprint{display:none!important}}
 </style></head><body><nav class="sitenav" aria-label="網站頁面"><a href="index.html"><span class="ic">🏠</span>首頁</a><a href="itinerary.html"><span class="ic">🗓️</span>行程</a><a href="transport.html"><span class="ic">🚗</span>交通</a><a href="lodging.html"><span class="ic">🏨</span>住宿</a><a href="budget.html"><span class="ic">💰</span>預算</a><a href="ledger.html" aria-current=page><span class="ic">🧾</span>記帳</a></nav>
-<div class="hero"><div class="in"><h1>🧾 旅途記帳</h1><p>花了錢就記一筆，最後自動算誰該給誰。</p>
+<div class="hero"><div class="in"><h1>🧾 旅途記帳</h1><p>花了錢就記一筆。</p>
 <div class="st" id="st">載入中…</div></div></div>
-<div class="wrap"><div class="cols"><div>
+<div class="wrap">
 <section class="add" id="add">
 <div class="amtrow"><input id="amt" type="text" inputmode="decimal" placeholder="金額" autocomplete="off" aria-label="金額">
 <div class="seg" id="cur" role="group" aria-label="幣別"><button type="button" data-v="JPY" class="on">¥</button><button type="button" data-v="TWD">NT$</button></div></div>
 <div class="lbl2">類別</div><div class="chips c5" id="cat"><button type="button" data-v="美食"><small>🍜</small>美食</button><button type="button" data-v="活動"><small>🎟️</small>活動</button><button type="button" data-v="交通雜支"><small>⛽</small>交通</button><button type="button" data-v="購物"><small>🛍️</small>購物</button><button type="button" data-v="其他"><small>📦</small>其他</button></div>
 <div class="lbl2">誰付的</div><div class="chips c5" id="payer"><button type="button" data-v="Herry">Herry</button><button type="button" data-v="Lulu">Lulu</button><button type="button" data-v="Sofia">Sofia</button><button type="button" data-v="Allen">Allen</button><button type="button" data-v="Charlene">Charlene</button></div>
 <div class="lbl2">買了什麼</div><input id="item" class="txt" type="text" maxlength="60" placeholder="例：美麗海午餐、停車費" autocomplete="off">
-<div class="splitnote" id="splitnote"></div>
-<details class="more" id="more"><summary>更多選項：日期・怎麼分・備註・匯率</summary>
-<div class="lbl2">怎麼分</div>
-<div class="chips modes" id="mode"><button type="button" data-v="規則" class="on">依規則</button><button type="button" data-v="全員">5 人均分</button><button type="button" data-v="指定">指定人</button></div>
-<div class="chips whos" id="who" hidden><button type="button" data-v="Herry">Herry</button><button type="button" data-v="Lulu">Lulu</button><button type="button" data-v="Sofia">Sofia</button><button type="button" data-v="Allen">Allen</button><button type="button" data-v="Charlene">Charlene</button></div>
+<details class="more" id="more"><summary>更多選項：日期・備註・匯率</summary>
 <div class="mgrid" style="margin-top:10px">
 <div><label for="date">日期</label><input id="date" type="date"></div>
 <div><label for="rate">匯率（1 日圓＝? 台幣）</label><input id="rate" type="text" inputmode="decimal" value="0.21"></div>
@@ -354,33 +326,14 @@ img,video{max-width:100%;height:auto}
 <button class="go" id="go" type="button">＋ 記一筆</button>
 <div class="msg" id="msg" role="status"></div>
 </section>
-</div><div>
-<section class="settle" id="settle">
-<h2>💸 誰該給誰</h2>
-<div class="tot"><b id="tot">NT$0</b><span id="totj"></span></div>
-<div class="tog" id="unit"><button type="button" data-v="fam" class="on">以家庭算</button><button type="button" data-v="ppl">以個人算</button></div>
-<div id="tr"></div>
-<table class="bal"><thead><tr><th></th><th>已付</th><th>應分攤</th><th>差額</th></tr></thead><tbody id="bal"></tbody></table>
-<p class="small" style="color:#d6eaf3;margin:8px 0 0">差額：正數＝該收回，負數＝該付出。單位 NT$。</p>
-</section>
-</div></div>
 <section class="list"><h2>📒 明細 <button type="button" id="refresh" style="margin-left:auto;border:1px solid var(--line);background:#fff;border-radius:10px;min-height:40px;padding:0 12px;font:inherit;font-size:14px;cursor:pointer">↻ 更新</button></h2><div id="list"></div></section>
-<section><h2 style="font-size:17px">分帳規則與說明</h2><ul class="fine">
-<li><b>依規則</b>（預設）：🍜 美食、🎟️ 活動 → Herry＋Lulu 一半、Allen＋Charlene 一半（每人 25%），Sofia 不用出；長輩和小孩的份也含在裡面。這跟 <a href="budget.html">預算頁</a> 的活動美食分法相同。</li>
-<li>⛽ 交通雜支（油錢、停車、高速）、🛍️ 購物、📦 其他 → 依規則時 5 人均分（各 20%），跟預算頁的交通分法一樣。只有自己用的東西請別記，或用「指定人」。</li>
-<li><b>5 人均分</b>：任何類別都 5 人各 20%。<b>指定人</b>：只由勾選的人平分。</li>
-<li>住宿、包車、租車、機票已在預算頁分好，這裡只記旅途中的變動支出。</li>
-<li>日圓依每筆記錄時的匯率換成台幣（預設 1 日圓＝0.21 台幣，可在「更多選項」改），結算用台幣。「以家庭算」把 Herry＋Lulu、Allen＋Charlene 各當一家，轉帳次數最少。</li>
-<li>資料存在 Herry 的 Google 試算表，大家的手機看到同一份；收訊不好時會先存在手機，有網路自動補傳（⏳）。記錯了按 ✕ 刪掉再重記。</li>
-<li>這頁是公開網址，但只顯示名字和金額，不放個資。拿到網址的人理論上可以新增或刪除記錄（試算表裡會保留刪除紀錄，可還原）。</li>
-</ul></section>
+<p class="fine">資料存在共用的雲端表，大家的手機看到同一份；收訊不好時會先存在手機，有網路自動補傳（⏳）。記錯了按 ✕ 刪掉再重記。這頁是公開網址，只顯示名字和金額，不放個資。</p>
 </div>
 <script>
 var API="";
 var P=["Herry", "Lulu", "Sofia", "Allen", "Charlene"];
 var ICON={"美食": "🍜", "活動": "🎟️", "交通雜支": "⛽", "購物": "🛍️", "其他": "📦"};
 
-var FAM=[['Herry＋Lulu',['Herry','Lulu']],['Sofia',['Sofia']],['Allen＋Charlene',['Allen','Charlene']]];
 var K='okinawa2027-ledger-v1';
 function $(i){return document.getElementById(i)}
 function n0(x){return Math.round(x).toLocaleString('en-US')}
@@ -390,42 +343,20 @@ var S={rows:[],pend:[],me:null,cur:'JPY',rate:0.21,unit:'fam',synced:null};
 try{var o=JSON.parse(localStorage.getItem(K))||{};for(var k in o)S[k]=o[k]}catch(e){}
 function save(){try{localStorage.setItem(K,JSON.stringify(S))}catch(e){}}
 function today(){var d=new Date();return d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2)}
-// ---------- split math ----------
 function twd(r){return r.cur==='TWD'?+r.amt:+r.amt*(+r.rate||0.21)}
-function weights(r){var w={};P.forEach(function(p){w[p]=0});
- if(r.mode==='指定'){var l=String(r.who||'').split(',').filter(function(p){return P.indexOf(p)>=0});l.forEach(function(p){w[p]=1/l.length});return w}
- if(r.mode==='全員'||(r.cat!=='美食'&&r.cat!=='活動')){P.forEach(function(p){w[p]=.2});return w}
- ['Herry','Lulu','Allen','Charlene'].forEach(function(p){w[p]=.25});return w}
 function view(){ // server rows + pending adds − pending deletes
  var dels={},have={};S.pend.forEach(function(q){if(q.action==='del')dels[q.id]=1});
  var out=[];S.rows.forEach(function(r){have[r.id]=1;if(!r.del&&!dels[r.id])out.push(r)});
  S.pend.forEach(function(q){if(q.action==='add'&&!have[q.entry.id]&&!dels[q.entry.id]){var e=Object.assign({pend:1},q.entry);out.push(e)}});
  return out}
-function settle(bal){ // greedy min transfers on {name:balance}
- var c=[],d=[],t=[];for(var k in bal){var v=Math.round(bal[k]);if(v>0)c.push([k,v]);else if(v<0)d.push([k,-v])}
- c.sort(function(a,b){return b[1]-a[1]});d.sort(function(a,b){return b[1]-a[1]});
- var i=0,j=0;while(i<d.length&&j<c.length){var x=Math.min(d[i][1],c[j][1]);if(x>0)t.push([d[i][0],c[j][0],x]);d[i][1]-=x;c[j][1]-=x;if(d[i][1]<=0)i++;if(c[j][1]<=0)j++}
- return t}
-function compute(rows){var paid={},share={},tot=0,totj=0;P.forEach(function(p){paid[p]=0;share[p]=0});
- rows.forEach(function(r){var v=twd(r),w=weights(r);tot+=v;totj+=r.cur==='TWD'?v/(+r.rate||0.21):+r.amt;paid[r.payer]+=v;P.forEach(function(p){share[p]+=v*w[p]})});
- return {paid:paid,share:share,tot:tot,totj:totj}}
-window._ledger={twd:twd,weights:weights,settle:settle,compute:compute};
 // ---------- render ----------
-function render(){var rows=view(),c=compute(rows);
- $('tot').textContent='NT$'+n0(c.tot);$('totj').textContent=rows.length?('約 ¥'+n0(c.totj)+'・'+rows.length+' 筆'):'還沒有記錄';
- var units=S.unit==='fam'?FAM:P.map(function(p){return [p,[p]]});
- var bal={},hb='';units.forEach(function(u){var pd=0,sh=0;u[1].forEach(function(p){pd+=c.paid[p];sh+=c.share[p]});bal[u[0]]=pd-sh;
-  var b=Math.round(pd-sh);hb+='<tr><td>'+u[0]+'</td><td>'+n0(pd)+'</td><td>'+n0(sh)+'</td><td class="'+(b>0?'pos':b<0?'neg':'')+'">'+(b>0?'+':'')+n0(b)+'</td></tr>'});
- $('bal').innerHTML=hb;
- var t=settle(bal);$('tr').innerHTML=t.length?t.map(function(x){return '<div class="tr"><span>'+x[0]+'</span><span class="ar">→ 給 →</span><span>'+x[1]+'</span><span class="amt">NT$'+n0(x[2])+'</span></div>'}).join(''):'<div class="none">目前不用轉帳 👍</div>';
- document.querySelectorAll('#unit button').forEach(function(b){b.classList.toggle('on',b.dataset.v===S.unit)});
- // list
+function render(){var rows=view();
  var by={};rows.forEach(function(r){(by[r.date]=by[r.date]||[]).push(r)});
  var days=Object.keys(by).sort().reverse(),h='';
  days.forEach(function(d){var dt=by[d].reduce(function(s,r){return s+twd(r)},0);var dd=new Date(d+'T00:00:00');var wk='日一二三四五六'[dd.getDay()];
   h+='<div class="day"><span>'+(+d.slice(5,7))+'/'+(+d.slice(8,10))+'（'+wk+'）</span><span>NT$'+n0(dt)+'</span></div>';
-  by[d].slice().reverse().forEach(function(r){var lbl=r.mode==='指定'?'只分給 '+String(r.who).split(',').join('、'):r.mode==='全員'?'5 人均分':(r.cat==='美食'||r.cat==='活動')?'兩家平分':'5 人均分';
-   h+='<div class="ent'+(r.pend?' pend':'')+'"><div class="ic">'+(ICON[r.cat]||'📦')+'</div><div class="main"><div class="it">'+esc(r.item||r.cat)+'</div><div class="sub">'+r.payer+' 付・'+lbl+(r.note?'・'+esc(r.note):'')+'</div></div><div class="money">'+(r.cur==='TWD'?'NT$'+n0(r.amt):'¥'+n0(r.amt))+(r.cur==='TWD'?'':'<small>NT$'+n0(twd(r))+'</small>')+'</div><button class="x" type="button" data-id="'+esc(r.id)+'" aria-label="刪除">✕</button></div>'})});
+  by[d].slice().reverse().forEach(function(r){
+   h+='<div class="ent'+(r.pend?' pend':'')+'"><div class="ic">'+(ICON[r.cat]||'📦')+'</div><div class="main"><div class="it">'+esc(r.item||r.cat)+'</div><div class="sub">'+r.payer+' 付'+(r.note?'・'+esc(r.note):'')+'</div></div><div class="money">'+(r.cur==='TWD'?'NT$'+n0(r.amt):'¥'+n0(r.amt))+(r.cur==='TWD'?'':'<small>NT$'+n0(twd(r))+'</small>')+'</div><button class="x" type="button" data-id="'+esc(r.id)+'" aria-label="刪除">✕</button></div>'})});
  $('list').innerHTML=h||'<div class="empty">還沒有記錄。上面輸入金額就能記第一筆。</div>';
  status()}
 function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
@@ -449,31 +380,20 @@ function sync(){if(!API||busy)return Promise.resolve();busy=true;status('🔄 �
 // ---------- form ----------
 var F={cat:null,payer:S.me,mode:'規則',who:[]};
 function pick(id,v){document.querySelectorAll('#'+id+' button').forEach(function(b){b.classList.toggle('on',b.dataset.v===v)})}
-function hint(){var r={cat:F.cat||'美食',mode:F.mode,who:F.who.join(',')},w=weights(r),on=P.filter(function(p){return w[p]>0});
- var t;if(!F.cat&&F.mode==='規則')t='依規則：美食／活動 兩家平分（Sofia 不用出），其他 5 人均分';
- else if(F.mode==='指定'&&!on.length)t='請勾選要分攤的人';
- else if(on.length===5)t='這筆 5 人均分，每人 20%';
- else if(F.mode==='規則')t='這筆 Herry、Lulu、Allen、Charlene 各 25%（兩家平分），Sofia 不用出';
- else t='這筆由 '+on.join('、')+' 平分，各 '+Math.round(100/on.length)+'%';
- $('splitnote').textContent=t}
 function flash(t,err){var m=$('msg');m.textContent=t;m.className='msg '+(err?'err':'ok');clearTimeout(flash.t);flash.t=setTimeout(function(){m.textContent=''},4000)}
 function bind(id,fn){$(id).addEventListener('click',function(e){var b=e.target.closest('button[data-v]');if(b)fn(b.dataset.v,b)})}
 bind('cur',function(v){S.cur=v;pick('cur',v);save()});
-bind('cat',function(v){F.cat=v;pick('cat',v);hint()});
+bind('cat',function(v){F.cat=v;pick('cat',v)});
 bind('payer',function(v){F.payer=v;S.me=v;pick('payer',v);save()});
-bind('mode',function(v){F.mode=v;pick('mode',v);$('who').hidden=v!=='指定';hint()});
-bind('who',function(v,b){var i=F.who.indexOf(v);if(i<0)F.who.push(v);else F.who.splice(i,1);b.classList.toggle('on',i<0);hint()});
-bind('unit',function(v){S.unit=v;save();render()});
 $('go').addEventListener('click',function(){
  var amt=parseFloat(String($('amt').value).replace(/[,，\s¥$]/g,''));
  if(!(amt>0)){flash('請輸入金額',1);$('amt').focus();return}
  if(!F.cat){flash('請選類別',1);return}
  if(!F.payer){flash('請選誰付的',1);return}
- if(F.mode==='指定'&&!F.who.length){flash('請勾選要分攤的人',1);$('more').open=true;return}
  var rate=parseFloat($('rate').value);if(!(rate>=0.05&&rate<=1))rate=0.21;
- var e={id:Date.now().toString(36)+Math.random().toString(36).slice(2,8),date:$('date').value||today(),cat:F.cat,item:$('item').value.trim().slice(0,60),amt:amt,cur:S.cur,rate:rate,payer:F.payer,mode:F.mode,who:F.mode==='指定'?F.who.join(','):'',note:$('note').value.trim().slice(0,200)};
+ var e={id:Date.now().toString(36)+Math.random().toString(36).slice(2,8),date:$('date').value||today(),cat:F.cat,item:$('item').value.trim().slice(0,60),amt:amt,cur:S.cur,rate:rate,payer:F.payer,mode:F.mode||'規則',who:'',note:$('note').value.trim().slice(0,200)};
  S.pend.push({action:'add',entry:e});S.rate=rate;save();
- $('amt').value='';$('item').value='';$('note').value='';F.cat=null;pick('cat','');F.mode='規則';pick('mode','規則');F.who=[];pick('who','');$('who').hidden=true;hint();
+ $('amt').value='';$('item').value='';$('note').value='';F.cat=null;pick('cat','');
  flash('✅ 已記下 '+(e.cur==='TWD'?'NT$':'¥')+n0(amt)+(API?'':'（只存在這支手機）'));render();sync()});
 $('list').addEventListener('click',function(ev){var b=ev.target.closest('button.x');if(!b)return;var id=b.dataset.id;
  var r=view().filter(function(x){return x.id===id})[0];if(!r)return;
@@ -482,7 +402,7 @@ $('list').addEventListener('click',function(ev){var b=ev.target.closest('button.
  if(pi>=0)S.pend.splice(pi,1);else S.pend.push({action:'del',id:id});save();render();sync()});
 $('refresh').addEventListener('click',sync);
 // init
-$('date').value=today();$('rate').value=S.rate||0.21;pick('cur',S.cur);if(S.me)pick('payer',S.me);hint();render();sync();
+$('date').value=today();$('rate').value=S.rate||0.21;pick('cur',S.cur);if(S.me)pick('payer',S.me);render();sync();
 setInterval(function(){if(document.visibilityState==='visible')sync()},30000);
 document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')sync()});
 window.addEventListener('online',sync);
